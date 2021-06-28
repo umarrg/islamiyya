@@ -59,7 +59,7 @@ export default {
     drawer: true,
     links: [
       { icon: "mdi-view-dashboard", text: "Dashboard", route: "/" },
-      { icon: "mdi-heart", text: "Map", route: "/about" },
+      { icon: "mdi-map", text: "Map", route: "/about" },
     ],
 
     offset: true,

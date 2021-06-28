@@ -18,7 +18,7 @@
         <v-card-text class="pa-10">
           <v-row>
             <div>
-              <span class="primary--text">{{ item.verse_key }}</span>
+              <span class="secondary--text">{{ item.verse_key }}</span>
             </div>
             <v-spacer></v-spacer>
             <div>
@@ -30,7 +30,7 @@
               <div>
                 <span class="primary--text"
                   >English Sahih Ibnu-Khasir |<v-btn
-                    @click="tran(item.verse_key)"
+                    @click="tran(item)"
                     text
                     color="orange lighten-2"
                     class="text-icon"
@@ -51,7 +51,6 @@
                 <v-btn icon>
                   <v-icon small>mdi-heart-outline</v-icon>
                 </v-btn>
-                <!-- <vuetify-audio :file="file" color="gray" :ended="audioFinish" downloadable flat class="pa-0 ma-0"></vuetify-audio> -->
                 <v-btn icon>
                   <v-icon>mdi-motion-play-outline</v-icon>
                 </v-btn>
@@ -69,13 +68,8 @@
 <script>
 import axios from "axios";
 export default {
-  // components: {
-  //   VuetifyAudio: () => import("vuetify-audio"),
-  // },
   data: () => ({
     surahs: {},
-    file: "http://www.hochmuth.com/mp3/Boccherini_Concerto_478-1.mp3",
-
     number: "",
     show: true,
     loading: true,
@@ -84,10 +78,10 @@ export default {
     hausaTran: "",
   }),
   methods: {
-    tran() {
+    tran(k) {
       axios
         .get(
-          ` https://api.quran.com/api/v4/quran/translations/32?chapter_number=${this.id}`
+          ` https://api.quran.com/api/v4/quran/translations/32?chapter_number=${this.id}&verse_key=${k}`
         )
         .then((res) => {
           this.hausaTran = res.data.translations;

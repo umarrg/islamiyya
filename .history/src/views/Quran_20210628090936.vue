@@ -19,7 +19,7 @@
                 <v-list-item>
                   <v-list-item-avatar size="25">
                     <v-avatar color="primary">
-                      <span class=" number_text white--text">{{ item.id }}</span>
+                      <span class="white--text number_text">{{ item.id }}</span>
                     </v-avatar>
                   </v-list-item-avatar>
                   <v-list-item-content>

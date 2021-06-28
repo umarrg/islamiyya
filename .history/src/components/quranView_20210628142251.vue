@@ -51,7 +51,7 @@
                 <v-btn icon>
                   <v-icon small>mdi-heart-outline</v-icon>
                 </v-btn>
-                <!-- <vuetify-audio :file="file" color="gray" :ended="audioFinish" downloadable flat class="pa-0 ma-0"></vuetify-audio> -->
+                <vuetify-audio :file="file" color="gray" :ended="audioFinish" downloadable flat class="pa-0"></vuetify-audio>
                 <v-btn icon>
                   <v-icon>mdi-motion-play-outline</v-icon>
                 </v-btn>
@@ -69,9 +69,9 @@
 <script>
 import axios from "axios";
 export default {
-  // components: {
-  //   VuetifyAudio: () => import("vuetify-audio"),
-  // },
+  components: {
+    VuetifyAudio: () => import("vuetify-audio"),
+  },
   data: () => ({
     surahs: {},
     file: "http://www.hochmuth.com/mp3/Boccherini_Concerto_478-1.mp3",

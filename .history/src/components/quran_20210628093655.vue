@@ -3,9 +3,7 @@
     <v-card class="custom__img text-center" height="800">
       <v-container fill-height>
          <v-row>
-           <v-col cols="12">
-             <h1>Al-quran Kareem</h1>
-           </v-col>
+           <v-col></v-col>
          </v-row>
        </v-container>
     </v-card>

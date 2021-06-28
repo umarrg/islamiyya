@@ -69,9 +69,9 @@
 <script>
 import axios from "axios";
 export default {
-  // components: {
-  //   VuetifyAudio: () => import("vuetify-audio"),
-  // },
+  components: {
+    VuetifyAudio: () => import("vuetify-audio"),
+  },
   data: () => ({
     surahs: {},
     file: "http://www.hochmuth.com/mp3/Boccherini_Concerto_478-1.mp3",

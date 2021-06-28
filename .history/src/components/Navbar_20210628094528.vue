@@ -1,11 +1,11 @@
 <template>
   <nav>
-    <v-app-bar app dense>
+    <v-app-bar app  dense >
       <v-app-bar-nav-icon
         dark
         small
         @click="drawer = !drawer"
-        color="secondary"
+        
       ></v-app-bar-nav-icon>
       <!-- <v-text-field
         prepend-inner-icon="mdi-magnify"
@@ -23,13 +23,11 @@
     <v-navigation-drawer v-model="drawer" app mini-variant>
       <v-layout align-center class="mb-5">
         <v-flex>
-          <router-link to="/">
-            <v-sheet color="teal" height="48" class="text-center">
-              <v-icon color="white" class="mt-2"
-                >mdi-book-open-page-variant</v-icon
-              >
-            </v-sheet>
-          </router-link>
+          <v-sheet color="teal" height="48" class="text-center">
+            <v-icon color="white" class="mt-2"
+              >mdi-book-open-page-variant</v-icon
+            >
+          </v-sheet>
         </v-flex>
       </v-layout>
 
@@ -59,7 +57,7 @@ export default {
     drawer: true,
     links: [
       { icon: "mdi-view-dashboard", text: "Dashboard", route: "/" },
-      { icon: "mdi-heart", text: "Map", route: "/about" },
+      { icon: "mdi-map", text: "Map", route: "/about" },
     ],
 
     offset: true,

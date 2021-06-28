@@ -1,13 +1,9 @@
 <template>
   <div class="custom__bg">
     <v-card class="custom__img text-center" height="800">
-      <v-container fill-height>
-         <v-row>
-           <v-col cols="12">
-             <h1>Al-quran Kareem</h1>
-           </v-col>
-         </v-row>
-       </v-container>
+      <v-card-text>
+        
+      </v-card-text>
     </v-card>
   </div>
 </template>
@@ -19,7 +15,9 @@ export default {
 
 <style scoped>
 .custom__img {
-  /* background: url("../assets/quran.svg"); */
+  background: url("../assets/quran.svg");
 }
-
+.custom__bg {
+  background: background;
+}
 </style>

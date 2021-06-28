@@ -15,17 +15,16 @@ export default new Vuetify({
       light: {
         primary: colors.teal.darken4,
         secondary: colors.grey.darken4,
-        
+        accent: colors.pink.darken1,
         error: colors.red.accent3,
         background: colors.grey.lighten4,
         info: colors.grey.lighten4,
       },
       dark: {
         primary: colors.teal.darken4,
-        background: colors.grey.lighten4,
-        secondary: colors.grey.lighten5,
+        background: colors.grey.darken4,
+        secondary: colors.greylighten5,
         info: colors.teal.lighten1,
-        
       },
     },
   },

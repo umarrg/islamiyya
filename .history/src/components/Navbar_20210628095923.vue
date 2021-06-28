@@ -23,7 +23,7 @@
     <v-navigation-drawer v-model="drawer" app mini-variant>
       <v-layout align-center class="mb-5">
         <v-flex>
-          <router-link to="/">
+          <router-link to="/home">
             <v-sheet color="teal" height="48" class="text-center">
               <v-icon color="white" class="mt-2"
                 >mdi-book-open-page-variant</v-icon
@@ -59,7 +59,7 @@ export default {
     drawer: true,
     links: [
       { icon: "mdi-view-dashboard", text: "Dashboard", route: "/" },
-      { icon: "mdi-heart", text: "Map", route: "/about" },
+      { icon: "mdi-map", text: "Map", route: "/about" },
     ],
 
     offset: true,

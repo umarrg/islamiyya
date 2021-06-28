@@ -22,7 +22,7 @@ export default new Vuetify({
       },
       dark: {
         primary: colors.teal.darken4,
-        background: colors.grey.lighten4,
+        background: colors.grey.darken4,
         secondary: colors.grey.lighten5,
         info: colors.teal.lighten1,
         
