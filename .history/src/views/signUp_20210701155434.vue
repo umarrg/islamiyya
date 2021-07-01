@@ -12,7 +12,7 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2 subtitle-1">Sign in</span>
                   <v-divider></v-divider>
                 </div>
 
@@ -66,7 +66,7 @@
                   "
                   >
                     <v-divider></v-divider>
-                    <span class="mx-2 custom__t">OR SIGN IN WITH</span>
+                    <span class="mx-2">OR SIGN IN WITH</span>
                     <v-divider></v-divider>
                   </div>
                 </v-col>
@@ -122,8 +122,5 @@ export default {
   font-size: 12px;
   text-decoration-line: underline;
   color: blue;
-}
-.custom__t{
-    font-size: 11px;
 }
 </style>

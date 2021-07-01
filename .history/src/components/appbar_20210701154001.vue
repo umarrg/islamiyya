@@ -7,6 +7,6 @@
     <v-btn color="primary" outlined class="mx-2" large text to="/login"
       >Sign in</v-btn
     >
-    <v-btn color="primary" large to="/signUp"  >Sign Up</v-btn>
+    <v-btn color="primary" large>Sign Up</v-btn>
   </v-app-bar>
 </template>

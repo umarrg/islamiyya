@@ -1,5 +1,5 @@
 <template>
-  <v-app-bar color="#F2F5F8" app outlined>
+  <v-app-bar color="background" app outlined>
     <v-app-bar-title class="text-h6"
       ><router-link to="/"> ISLAMIYYA</router-link>
     </v-app-bar-title>

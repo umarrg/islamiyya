@@ -19,7 +19,7 @@
                   rounded="lg"
                   :elevation="hover ? 15 : 6"
                >
-                <p class=" text-h6 black--text">{{ item.title }}</p>
+                <p class=" text-h6">{{ item.title }}</p>
                 </v-card>
               </template>
              </v-hover>
@@ -48,7 +48,7 @@
       
     >
       <v-card-title class="">
-        <strong class="subheading" >Get connected with us on social networks!</strong>
+        <strong class="subheading secondary--text" >Get connected with us on social networks!</strong>
 
         <v-spacer></v-spacer>
 

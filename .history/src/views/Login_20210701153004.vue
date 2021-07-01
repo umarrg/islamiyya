@@ -1,7 +1,7 @@
 <template>
   <v-app class="custom__bg">
     <v-container fill-height>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center\">
         <div class="d-flex justify-center align-center"></div>
         <v-col cols="12" md="12">
           <div class="d-flex justify-center align-center">
@@ -12,50 +12,30 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2  text-h6">Sign in</span>
                   <v-divider></v-divider>
                 </div>
 
                 <v-col cols="12" md="12">
-                  <v-text-field
-                    outlined
-                    placeholder="Email"
-                    v-model="email"
-                  ></v-text-field>
+                  <v-text-field outlined placeholder="Email"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
-                  <v-text-field
-                    outlined
-                    placeholder="Password"
-                    v-model="password"
-                  ></v-text-field>
+                  <v-text-field outlined placeholder="Password"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
                   <v-checkbox
                     label="Remember me"
                     class="ma-0"
-                    v-model="check"
-                    value="check"
+                    v-model="value"
+                    value="value"
                   ></v-checkbox>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
-                  <v-btn
-                    block
-                    large
-                    class="text-capitalise"
-                    color="primary"
-                    @click="signIn()"
-                    >Sign In</v-btn
-                  >
+                  <v-btn block large class="text-capitalise" color="primary">Sign In</v-btn>
                 </v-col>
                 <v-col cols="12" md="12">
                   <div class="d-flex align-center justify-center">
-                    <v-btn
-                      text
-                      small
-                      class="custom__bt text-capitalise"
-                      color="blue"
-                    >
+                    <v-btn text small class="custom__bt text-capitalise" color="blue">
                       forgot password?
                     </v-btn>
                   </div>
@@ -66,22 +46,29 @@
                   "
                   >
                     <v-divider></v-divider>
-                    <span class="mx-2 custom__t">OR SIGN IN WITH</span>
+                    <span class="mx-2">OR SIGN IN WITH</span>
                     <v-divider></v-divider>
                   </div>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
                   <div class="d-flex align-center justify-center text-wrap">
-                    <v-btn
-                      outlined
-                      color="primary"
-                      class="px-10 mx-2"
-                      v-for="item in icon"
-                      :key="item"
-                    >
-                      <v-icon> {{ item }}</v-icon>
+                    <v-btn outlined class="px-10 mx-2">
+                      <v-icon> mdi-facebook </v-icon>
+                    </v-btn>
+                    <v-btn outlined class="px-10 mx-2">
+                      <v-icon> mdi-twitter </v-icon>
+                    </v-btn>
+                    <v-btn outlined class="px-10 mx-2">
+                      <v-icon> mdi-google </v-icon>
                     </v-btn>
                   </div>
+                </v-col>
+                <v-col cols="12" md="12" class="py-0">
+                  <span>
+                    BY SIGNING IN, YOU AGREE TO THE
+                    <span class="custom__bt"> TERMS OF SERVICE</span> &
+                    <span class="custom__bt">PRIVACY POLICY</span>
+                  </span>
                 </v-col>
               </v-card-text>
             </v-card>
@@ -92,38 +79,11 @@
   </v-app>
 </template>
 
-<script>
-export default {
-  data: () => ({
-    icon: ["mdi-facebook", "mdi-twitter", "mdi-google"],
-    email: "",
-    password: "",
-  }),
-  methods: {
-    signIn() {
-      const signIN = {
-        email: this.email,
-        password: this.password,
-      };
-      console.log(signIN);
-    },
-  },
-};
-</script>
-
 <style scoped>
 .custom__bg {
   background: #f2f5f8;
 }
 .custom__bt {
   text-decoration-line: underline;
-}
-.custom__text {
-  font-size: 12px;
-  text-decoration-line: underline;
-  color: blue;
-}
-.custom__t{
-    font-size: 11px;
 }
 </style>

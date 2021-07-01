@@ -1,7 +1,13 @@
 <template>
- <v-app class="custom__bg">
+ <v-app class="backgound">
    <AppBar />
-    
+    <v-btn icon v-if="!$vuetify.theme.dark" @click="toggleTheme()">
+         <v-icon class="mr-1" color="blue-grey darken-4">mdi-lightbulb</v-icon>
+       </v-btn>
+         <v-btn icon v-if="$vuetify.theme.dark" @click="toggleTheme()">
+          <v-icon color="yellow darken-3">mdi-lightbulb-outline</v-icon>
+        </v-btn>
+ 
    <v-container fill >
      <v-row justify="center">
       
@@ -19,7 +25,7 @@
                   rounded="lg"
                   :elevation="hover ? 15 : 6"
                >
-                <p class=" text-h6 black--text">{{ item.title }}</p>
+                <p class=" text-h6">{{ item.title }}</p>
                 </v-card>
               </template>
              </v-hover>
@@ -48,7 +54,7 @@
       
     >
       <v-card-title class="">
-        <strong class="subheading" >Get connected with us on social networks!</strong>
+        <strong class="subheading secondary--text" >Get connected with us on social networks!</strong>
 
         <v-spacer></v-spacer>
 
@@ -113,7 +119,11 @@ export default {
       },
     ],
   }),
- 
+  methods: {
+    toggleTheme() {
+      this.$vuetify.theme.dark = !this.$vuetify.theme.dark;
+    },
+  },
 };
 </script>
 

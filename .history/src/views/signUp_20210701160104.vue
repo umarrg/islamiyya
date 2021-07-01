@@ -12,9 +12,16 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2 subtitle-1">Create Account</span>
                   <v-divider></v-divider>
                 </div>
+                <v-col cols="12" md="12">
+                  <v-text-field
+                    outlined
+                    placeholder="Name"
+                    v-model="name"
+                  ></v-text-field>
+                </v-col>
 
                 <v-col cols="12" md="12">
                   <v-text-field
@@ -30,43 +37,25 @@
                     v-model="password"
                   ></v-text-field>
                 </v-col>
-                <v-col cols="12" md="12" class="py-0">
-                  <v-checkbox
-                    label="Remember me"
-                    class="ma-0"
-                    v-model="check"
-                    value="check"
-                  ></v-checkbox>
-                </v-col>
+
                 <v-col cols="12" md="12" class="py-0">
                   <v-btn
                     block
                     large
                     class="text-capitalise"
                     color="primary"
-                    @click="signIn()"
+                    @click="signUp()"
                     >Sign In</v-btn
                   >
                 </v-col>
-                <v-col cols="12" md="12">
-                  <div class="d-flex align-center justify-center">
-                    <v-btn
-                      text
-                      small
-                      class="custom__bt text-capitalise"
-                      color="blue"
-                    >
-                      forgot password?
-                    </v-btn>
-                  </div>
-                </v-col>
-                <v-col cols="12" md="12" class="py-0">
+
+                <v-col cols="12" md="12" class="py-3">
                   <div
                     class="d-flex align-center justify-center
                   "
                   >
                     <v-divider></v-divider>
-                    <span class="mx-2 custom__t">OR SIGN IN WITH</span>
+                    <span class="mx-2 custom__t">OR SIGN UP WITH</span>
                     <v-divider></v-divider>
                   </div>
                 </v-col>
@@ -98,14 +87,16 @@ export default {
     icon: ["mdi-facebook", "mdi-twitter", "mdi-google"],
     email: "",
     password: "",
+    name: "",
   }),
   methods: {
-    signIn() {
-      const signIN = {
+    signUp() {
+      const signUp = {
+        name: this.name,
         email: this.email,
         password: this.password,
       };
-      console.log(signIN);
+      console.log(signUp);
     },
   },
 };
@@ -124,6 +115,6 @@ export default {
   color: blue;
 }
 .custom__t{
-    font-size: 11px;
+    font-size: 12px;
 }
 </style>

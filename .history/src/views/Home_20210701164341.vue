@@ -48,7 +48,7 @@
       
     >
       <v-card-title class="">
-        <strong class="subheading" >Get connected with us on social networks!</strong>
+        <strong class="subheading secondary--text" >Get connected with us on social networks!</strong>
 
         <v-spacer></v-spacer>
 

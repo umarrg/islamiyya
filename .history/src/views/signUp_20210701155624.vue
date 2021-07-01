@@ -12,9 +12,16 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2 subtitle-1">Create Account</span>
                   <v-divider></v-divider>
                 </div>
+                <v-col cols="12" md="12">
+                  <v-text-field
+                    outlined
+                    placeholder="Name"
+                    v-model="name"
+                  ></v-text-field>
+                </v-col>
 
                 <v-col cols="12" md="12">
                   <v-text-field
@@ -30,14 +37,7 @@
                     v-model="password"
                   ></v-text-field>
                 </v-col>
-                <v-col cols="12" md="12" class="py-0">
-                  <v-checkbox
-                    label="Remember me"
-                    class="ma-0"
-                    v-model="check"
-                    value="check"
-                  ></v-checkbox>
-                </v-col>
+
                 <v-col cols="12" md="12" class="py-0">
                   <v-btn
                     block
@@ -48,25 +48,14 @@
                     >Sign In</v-btn
                   >
                 </v-col>
-                <v-col cols="12" md="12">
-                  <div class="d-flex align-center justify-center">
-                    <v-btn
-                      text
-                      small
-                      class="custom__bt text-capitalise"
-                      color="blue"
-                    >
-                      forgot password?
-                    </v-btn>
-                  </div>
-                </v-col>
+
                 <v-col cols="12" md="12" class="py-0">
                   <div
                     class="d-flex align-center justify-center
                   "
                   >
                     <v-divider></v-divider>
-                    <span class="mx-2 custom__t">OR SIGN IN WITH</span>
+                    <span class="mx-2">OR SIGN UP WITH</span>
                     <v-divider></v-divider>
                   </div>
                 </v-col>
@@ -100,7 +89,7 @@ export default {
     password: "",
   }),
   methods: {
-    signIn() {
+    signUP() {
       const signIN = {
         email: this.email,
         password: this.password,
@@ -122,8 +111,5 @@ export default {
   font-size: 12px;
   text-decoration-line: underline;
   color: blue;
-}
-.custom__t{
-    font-size: 11px;
 }
 </style>

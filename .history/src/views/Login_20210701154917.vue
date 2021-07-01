@@ -1,7 +1,7 @@
 <template>
   <v-app class="custom__bg">
     <v-container fill-height>
-      <v-row align="center" justify="center">
+      <v-row align="center" justify="center\">
         <div class="d-flex justify-center align-center"></div>
         <v-col cols="12" md="12">
           <div class="d-flex justify-center align-center">
@@ -12,23 +12,15 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2 subtitle-1">Sign in</span>
                   <v-divider></v-divider>
                 </div>
 
                 <v-col cols="12" md="12">
-                  <v-text-field
-                    outlined
-                    placeholder="Email"
-                    v-model="email"
-                  ></v-text-field>
+                  <v-text-field outlined placeholder="Email" v-model="email"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
-                  <v-text-field
-                    outlined
-                    placeholder="Password"
-                    v-model="password"
-                  ></v-text-field>
+                  <v-text-field outlined placeholder="Password" v-model="password"></v-text-field>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
                   <v-checkbox
@@ -39,12 +31,7 @@
                   ></v-checkbox>
                 </v-col>
                 <v-col cols="12" md="12" class="py-0">
-                  <v-btn
-                    block
-                    large
-                    class="text-capitalise"
-                    color="primary"
-                    @click="signIn()"
+                  <v-btn block large class="text-capitalise" color="primary" @click="signIn()"
                     >Sign In</v-btn
                   >
                 </v-col>
@@ -66,7 +53,7 @@
                   "
                   >
                     <v-divider></v-divider>
-                    <span class="mx-2 custom__t">OR SIGN IN WITH</span>
+                    <span class="mx-2">OR SIGN IN WITH</span>
                     <v-divider></v-divider>
                   </div>
                 </v-col>
@@ -79,7 +66,7 @@
                       v-for="item in icon"
                       :key="item"
                     >
-                      <v-icon> {{ item }}</v-icon>
+                      <v-icon> {{ item}}</v-icon>
                     </v-btn>
                   </div>
                 </v-col>
@@ -96,18 +83,7 @@
 export default {
   data: () => ({
     icon: ["mdi-facebook", "mdi-twitter", "mdi-google"],
-    email: "",
-    password: "",
   }),
-  methods: {
-    signIn() {
-      const signIN = {
-        email: this.email,
-        password: this.password,
-      };
-      console.log(signIN);
-    },
-  },
 };
 </script>
 
@@ -122,8 +98,5 @@ export default {
   font-size: 12px;
   text-decoration-line: underline;
   color: blue;
-}
-.custom__t{
-    font-size: 11px;
 }
 </style>

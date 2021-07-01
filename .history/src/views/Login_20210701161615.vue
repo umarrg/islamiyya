@@ -12,7 +12,7 @@
                   "
                 >
                   <v-divider></v-divider>
-                  <span class="mx-2 subtitle-1 secondary--text">Sign in</span>
+                  <span class="mx-2 subtitle-1">Sign in</span>
                   <v-divider></v-divider>
                 </div>
 
