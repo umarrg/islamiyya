@@ -1,0 +1,35 @@
+<template>
+  <v-app class="custom__bg">
+    <v-container fill-height>
+      <v-row align="center" justify="center\">
+        <div class="d-flex justify-center align-center"></div>
+        <v-col cols="12" md="12">
+          <div class="d-flex justify-center align-center">
+            <h4>YOUR ACCOUNT</h4>
+            <v-divider class="mx-5 mt-3"></v-divider>
+            <v-divider class="mx-5"></v-divider>
+            <v-divider class="mx-5"></v-divider>
+          </div>
+          <div class="d-flex justify-center align-center">
+            <v-card width="370">
+              <v-card-text>
+                <v-col cols="12" md="12">
+                  <v-text-field></v-text-field>
+                </v-col>
+                <v-col cols="12" md="12">
+                  <v-text-field></v-text-field>
+                </v-col>
+              </v-card-text>
+            </v-card>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
+</template>
+
+<style scoped>
+.custom__bg {
+  background: #f2f5f8;
+}
+</style>
