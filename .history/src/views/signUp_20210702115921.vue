@@ -1,0 +1,121 @@
+<template>
+  <v-app class="custom__bg">
+    <v-container fill-height>
+      <v-row align="center" justify="center">
+        <div class="d-flex justify-center align-center"></div>
+        <v-col cols="12" md="12">
+          <div class="d-flex justify-center align-center">
+            <v-card width="400" rounded="lg">
+              <v-card-text>
+                <div
+                  class="d-flex align-center justify-center
+                  "
+                >
+                  <v-divider></v-divider>
+                  <span class="mx-2 subtitle-1 secondary--text"
+                    >Create Account</span
+                  >
+                  <v-divider></v-divider>
+                </div>
+                <v-col cols="12" md="12">
+                  <v-text-field
+                    outlined
+                    placeholder="Name"
+                    v-model="name"
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="12">
+                  <v-text-field
+                    outlined
+                    placeholder="Email"
+                    v-model="email"
+                  ></v-text-field>
+                </v-col>
+                <v-col cols="12" md="12" class="py-0">
+                  <v-text-field
+                    outlined
+                    placeholder="Password"
+                    v-model="password"
+                  ></v-text-field>
+                </v-col>
+
+                <v-col cols="12" md="12" class="py-0">
+                  <v-btn
+                    block
+                    large
+                    class="text-capitalise"
+                    color="primary"
+                    @click="signUp()"
+                    >Sign In</v-btn
+                  >
+                </v-col>
+
+                <v-col cols="12" md="12" class="py-3">
+                  <div
+                    class="d-flex align-center justify-center
+                  "
+                  >
+                    <v-divider></v-divider>
+                    <span class="mx-2 custom__t">OR SIGN UP WITH</span>
+                    <v-divider></v-divider>
+                  </div>
+                </v-col>
+                <v-col cols="12" md="12" class="py-0">
+                  <div class="d-flex align-center justify-center text-wrap">
+                    <v-btn
+                      outlined
+                      color="primary"
+                      class="px-10 mx-2"
+                      v-for="item in icon"
+                      :key="item"
+                    >
+                      <v-icon> {{ item }}</v-icon>
+                    </v-btn>
+                  </div>
+                </v-col>
+              </v-card-text>
+            </v-card>
+          </div>
+        </v-col>
+      </v-row>
+    </v-container>
+  </v-app>
+</template>
+
+<script>
+export default {
+  data: () => ({
+    icon: ["mdi-facebook", "mdi-twitter", "mdi-google"],
+    email: "",
+    password: "",
+    name: "",
+  }),
+  methods: {
+    signUp() {
+      this.$store.dispatch("signup", {
+        email: this.email,
+        password: this.password,
+        name: this.name,
+      });
+    },
+  },
+};
+</script>
+
+<style scoped>
+.custom__bg {
+  background: #f2f5f8;
+}
+.custom__bt {
+  text-decoration-line: underline;
+}
+.custom__text {
+  font-size: 12px;
+  text-decoration-line: underline;
+  color: blue;
+}
+.custom__t {
+  font-size: 11px;
+}
+</style>
