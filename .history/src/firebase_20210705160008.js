@@ -1,4 +1,5 @@
 import firebase from "firebase/app";
+import firestore from "firebase/app"
 import "firebase/auth";
 import "firebase/firestore";
 import "firebase/database";
@@ -18,12 +19,13 @@ firebase.initializeApp(firebaseConfig);
 
 // utils
 const db = firebase.firestore();
+firestore.settings({ ignoreUndefinedProperties: true })
 const auth = firebase.auth();
 
 // collection references
 const usersCollection = db.collection("users");
-const likesCollection = db.collection('likes')
+const postsCollection = db.collection('posts');
 
 // export utils/refs
-export { db, auth, usersCollection, likesCollection };
+export { db, auth, usersCollection, postsCollection };
 export default firebase.database();

@@ -1,0 +1,32 @@
+<template>
+  <v-app>
+     <v-container fill-height>
+        <v-row>
+          <v-col cols="12" md="7">
+            <v-card outlined v-for="item in likes" :key="item._id">
+            <v-list>
+              <v-list-item>
+                <v-list-item-avatar>
+                  <v-avatar color="primary">
+                  <span>{{item.verse_key}}</span>
+                  </v-avatar>
+                </v-list-item-avatar>
+                <v-list-item-action>
+                  <span>{{item.arabic_text}}</span>
+                </v-list-item-action>
+              </v-list-item>
+            </v-list>
+            </v-card>
+          </v-col>
+        </v-row>
+      </v-container>
+  </v-app>
+</template>
+
+<script>
+export default {
+  data:()=>({
+    likes:{}
+  })
+}
+</script>
