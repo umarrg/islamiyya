@@ -9,7 +9,7 @@ import VueClipboard from 'vue-clipboard2'
 import shareIt from 'vue-share-it';
 
 
-
+Vue.use(VueAudio)
 Vue.use(shareIt);
 Vue.use(VueClipboard)
 

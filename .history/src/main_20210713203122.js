@@ -5,13 +5,7 @@ import router from './router'
 import store from './store'
 import axios from 'axios'
 import VueAxios from 'vue-axios'
-import VueClipboard from 'vue-clipboard2'
-import shareIt from 'vue-share-it';
 
-
-
-Vue.use(shareIt);
-Vue.use(VueClipboard)
 
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false

@@ -126,7 +126,7 @@
                 </div>
                 <div class="d-flex align-center justify-center">
                   <vuetify-audio
-                    v-show="!audio && currentAudio == item.verse_key"
+                    v-show="!audio && currentA == item.verse_key"
                     flat
                     :file="file"
                     color="primary"
@@ -151,11 +151,10 @@ export default {
   data: () => ({
     surahs: {},
     number: "",
-    audio: true,
+    audio: false,
     file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
     type: 2,
     loading: true,
     error: false,
@@ -234,8 +233,7 @@ export default {
           .catch((e) => {
             console.log(e);
           })
-          .finally(() => (this.audio = false), 
-            (this.currentAudio = key));
+          .finally(() => (this.audio = false));
     },
   },
 

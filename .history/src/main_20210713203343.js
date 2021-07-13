@@ -7,9 +7,9 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
 import shareIt from 'vue-share-it';
+import VueAudio from 'vue-audio-better'
 
-
-
+Vue.use(VueAudio)
 Vue.use(shareIt);
 Vue.use(VueClipboard)
 

@@ -59,7 +59,7 @@ const routes = [
     component: () => import("../views/Login.vue"),
     meta: {
       showHeader: false,
-      showAppbar: false,
+      showAppbar: true,
     },
   },
   {

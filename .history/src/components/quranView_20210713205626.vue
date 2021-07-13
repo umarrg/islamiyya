@@ -155,7 +155,7 @@ export default {
     file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
+    currentAudio
     type: 2,
     loading: true,
     error: false,

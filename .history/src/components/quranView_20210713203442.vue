@@ -22,9 +22,9 @@
                 <span class="primary--text">{{ item.verse_key }}</span>
               </div>
               <v-spacer></v-spacer>
-              <div class="text-right">
-                <span class="text-h5 "> {{ item.text_imlaei }} </span>
-              </div>
+            <div class="text-right">
+                    <span class="text-h5 "> {{ item.text_imlaei }} </span>
+                  </div>
             </v-row>
             <v-row>
               <v-col class="px-0">
@@ -61,77 +61,74 @@
                     <v-icon small>mdi-heart</v-icon>
                   </v-btn>
 
-                  <v-btn icon @click="getAudio(item.verse_key)">
+                  <v-btn icon>
                     <v-icon>mdi-motion-play-outline</v-icon>
                   </v-btn>
-                  <v-dialog transition="dialog-top-transition" max-width="400">
-                    <template v-slot:activator="{ on, attrs }">
-                      <v-btn color="" icon v-bind="attrs" v-on="on">
-                        <v-icon>mdi-share-variant</v-icon>
+                                        <v-dialog
+                        transition="dialog-top-transition"
+                        max-width="400"
+                      >
+                        <template v-slot:activator="{ on, attrs }">
+                          <v-btn color="" icon v-bind="attrs" v-on="on">
+                            <v-icon>mdi-share</v-icon>
+                          </v-btn>
+                        </template>
+                        <template v-slot:default="dialog">
+                          <v-card>
+                            <div class="d-flex align-center justfy-center">
+                              <v-card-title>
+                                share to social media</v-card-title
+                              >
+                              <v-spacer></v-spacer>
+                              <v-card-title>
+                                <v-btn icon @click="dialog.value = false">
+                                  <v-icon> mdi-close </v-icon>
+                                </v-btn>
+                              </v-card-title>
+                            </div>
+                            <v-card-text>
+                              <share-it
+                                :text="item.text_imlaei"
+                                :targets="[
+                                  'twitter',
+                                  'facebook',
+                                  'whatsapp',
+                                  'email',
+                                ]"
+                                dense
+                                url="https://www.google.com"
+                              >
+                                <template v-slot:twitter-icon>
+                                  <v-icon color="white">mdi-twitter</v-icon>
+                                </template>
+                                <template v-slot:twitter-label>
+                                  <em>Tweet it!</em>
+                                </template>
+                                <template v-slot:whatsapp-icon>
+                                  <v-icon color="white">mdi-whatsapp</v-icon>
+                                </template>
+
+                                <template v-slot:whatsapp-label>
+                                  <em>Share on Whatsapp</em>
+                                </template>
+                                <template v-slot:email-icon>
+                                  <v-icon color="white">mdi-gmail</v-icon>
+                                </template>
+                              </share-it>
+                            </v-card-text>
+                          </v-card>
+                        </template>
+                      </v-dialog>
+
+                      <v-btn
+                        icon
+                        v-clipboard:copy="item.text_imlaei"
+                        v-clipboard:success="onCopy"
+                        v-clipboard:error="onError"
+                      >
+                        <v-icon>mdi-content-copy</v-icon>
                       </v-btn>
-                    </template>
-                    <template v-slot:default="dialog">
-                      <v-card>
-                        <div class="d-flex align-center justfy-center">
-                          <v-card-title> share to social media</v-card-title>
-                          <v-spacer></v-spacer>
-                          <v-card-title>
-                            <v-btn icon @click="dialog.value = false">
-                              <v-icon> mdi-close </v-icon>
-                            </v-btn>
-                          </v-card-title>
-                        </div>
-                        <v-card-text>
-                          <share-it
-                            :text="item.text_imlaei"
-                            :targets="[
-                              'twitter',
-                              'facebook',
-                              'whatsapp',
-                              'email',
-                            ]"
-                            dense
-                            url="https://www.google.com"
-                          >
-                            <template v-slot:twitter-icon>
-                              <v-icon color="white">mdi-twitter</v-icon>
-                            </template>
-                            <template v-slot:twitter-label>
-                              <em>Tweet it!</em>
-                            </template>
-                            <template v-slot:whatsapp-icon>
-                              <v-icon color="white">mdi-whatsapp</v-icon>
-                            </template>
-
-                            <template v-slot:whatsapp-label>
-                              <em>Share on Whatsapp</em>
-                            </template>
-                            <template v-slot:email-icon>
-                              <v-icon color="white">mdi-gmail</v-icon>
-                            </template>
-                          </share-it>
-                        </v-card-text>
-                      </v-card>
-                    </template>
-                  </v-dialog>
-
-                  <v-btn
-                    icon
-                    v-clipboard:copy="item.text_imlaei"
-                    v-clipboard:success="onCopy"
-                    v-clipboard:error="onError"
-                  >
-                    <v-icon>mdi-content-copy</v-icon>
-                  </v-btn>
-                </div>
-                <div class="d-flex align-center justify-center">
-                  <vuetify-audio
-                    v-show="!audio && currentAudio == item.verse_key"
-                    flat
-                    :file="file"
-                    color="primary"
-                    downloadable
-                  ></vuetify-audio>
+                  
                 </div>
               </v-col>
             </v-row>
@@ -145,17 +142,11 @@
 import { mapGetters } from "vuex";
 import axios from "axios";
 export default {
-  components: {
-    VuetifyAudio: () => import("vuetify-audio"),
-  },
   data: () => ({
     surahs: {},
     number: "",
-    audio: true,
-    file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
     type: 2,
     loading: true,
     error: false,
@@ -169,7 +160,7 @@ export default {
       const likesData = {
         id: item.id,
         verse_key: item.verse_key,
-
+       
         arabic_verse: item.text_imlaei,
       };
       console.log(likesData);
@@ -214,35 +205,11 @@ export default {
           )
         );
     },
-    onCopy: function(e) {
-      alert("Copied to clipboard: " + e.text);
-    },
-    onError: function(e) {
-      alert("Failed to copy the text to the clipboard");
-      console.log(e);
-    },
-
-    getAudio(key) {
-      (this.audio = true),
-        axios
-          .get(`http://api.alquran.cloud/v1/ayah/${key}/ar.alafasy`)
-          .then((response) => {
-            this.file = response.data.data.audio;
-
-            console.log(response.data.data.audio);
-          })
-          .catch((e) => {
-            console.log(e);
-          })
-          .finally(() => (this.audio = false), 
-            (this.currentAudio = key));
-    },
   },
 
   mounted() {
     this.getChapters();
     this.getTranslations();
-    this.getAudio();
   },
   computed: {
     ...mapGetters(["isAuthenticated"]),

@@ -62,7 +62,7 @@
             >
               <v-list dense>
                 <v-list-item>
-                  <v-list-item-avatar size="25" class="">
+                  <v-list-item-avatar size="25" class="hidden-sm-and-down">
                     <v-avatar color="primary">
                       <span class=" number_text white--text">{{
                         item.id
@@ -73,11 +73,11 @@
                     <v-list-item-title>
                       <span>{{ item.name_simple }}</span>
                     </v-list-item-title>
-                    <v-list-item-subtitle class="">
+                    <v-list-item-subtitle class="hidden-sm-and-down">
                       <span>{{ item.translated_name.name }}</span>
                     </v-list-item-subtitle>
                   </v-list-item-content>
-                  <v-list-item-action class="">
+                  <v-list-item-action class="hidden-sm-and-down">
                     <span>{{ item.name_arabic }}</span>
                   </v-list-item-action>
                 </v-list-item>
@@ -116,23 +116,7 @@ export default {
         .finally(() => (this.loading = false));
     },
   },
-   watch: {
-    search() {
-     
-      console.log(this.search);
-      this.isLoading = true;
-      axios
-        .get(
-          ` https://api.quran.com/api/v4/search?q=${this.search}&size=20&page=0&language=en`
-        )
-        .then((response) => {
-          (this.users = response.data.search.results),
-            console.log(response.data);
-        })
-        .catch((err) => console.log(err))
-        .finally(() => (this.isLoading = false));
-    },
-  },
+  
   created() {
     this.fetchData();
   },

@@ -124,15 +124,6 @@
                     <v-icon>mdi-content-copy</v-icon>
                   </v-btn>
                 </div>
-                <div class="d-flex align-center justify-center">
-                  <vuetify-audio
-                    v-show="!audio && currentAudio == item.verse_key"
-                    flat
-                    :file="file"
-                    color="primary"
-                    downloadable
-                  ></vuetify-audio>
-                </div>
               </v-col>
             </v-row>
           </v-card-text>
@@ -145,17 +136,14 @@
 import { mapGetters } from "vuex";
 import axios from "axios";
 export default {
-  components: {
+   components: {
     VuetifyAudio: () => import("vuetify-audio"),
   },
   data: () => ({
     surahs: {},
     number: "",
-    audio: true,
-    file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
     type: 2,
     loading: true,
     error: false,
@@ -221,8 +209,7 @@ export default {
       alert("Failed to copy the text to the clipboard");
       console.log(e);
     },
-
-    getAudio(key) {
+     getAudio(key) {
       (this.audio = true),
         axios
           .get(`http://api.alquran.cloud/v1/ayah/${key}/ar.alafasy`)
@@ -234,15 +221,12 @@ export default {
           .catch((e) => {
             console.log(e);
           })
-          .finally(() => (this.audio = false), 
-            (this.currentAudio = key));
-    },
+          .finally(() => (this.audio = false));
   },
 
   mounted() {
     this.getChapters();
     this.getTranslations();
-    this.getAudio();
   },
   computed: {
     ...mapGetters(["isAuthenticated"]),

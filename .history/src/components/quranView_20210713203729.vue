@@ -61,13 +61,13 @@
                     <v-icon small>mdi-heart</v-icon>
                   </v-btn>
 
-                  <v-btn icon @click="getAudio(item.verse_key)">
+                  <v-btn icon>
                     <v-icon>mdi-motion-play-outline</v-icon>
                   </v-btn>
                   <v-dialog transition="dialog-top-transition" max-width="400">
                     <template v-slot:activator="{ on, attrs }">
                       <v-btn color="" icon v-bind="attrs" v-on="on">
-                        <v-icon>mdi-share-variant</v-icon>
+                        <v-icon>mdi-share-vari</v-icon>
                       </v-btn>
                     </template>
                     <template v-slot:default="dialog">
@@ -124,15 +124,6 @@
                     <v-icon>mdi-content-copy</v-icon>
                   </v-btn>
                 </div>
-                <div class="d-flex align-center justify-center">
-                  <vuetify-audio
-                    v-show="!audio && currentAudio == item.verse_key"
-                    flat
-                    :file="file"
-                    color="primary"
-                    downloadable
-                  ></vuetify-audio>
-                </div>
               </v-col>
             </v-row>
           </v-card-text>
@@ -145,17 +136,11 @@
 import { mapGetters } from "vuex";
 import axios from "axios";
 export default {
-  components: {
-    VuetifyAudio: () => import("vuetify-audio"),
-  },
   data: () => ({
     surahs: {},
     number: "",
-    audio: true,
-    file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
     type: 2,
     loading: true,
     error: false,
@@ -221,28 +206,11 @@ export default {
       alert("Failed to copy the text to the clipboard");
       console.log(e);
     },
-
-    getAudio(key) {
-      (this.audio = true),
-        axios
-          .get(`http://api.alquran.cloud/v1/ayah/${key}/ar.alafasy`)
-          .then((response) => {
-            this.file = response.data.data.audio;
-
-            console.log(response.data.data.audio);
-          })
-          .catch((e) => {
-            console.log(e);
-          })
-          .finally(() => (this.audio = false), 
-            (this.currentAudio = key));
-    },
   },
 
   mounted() {
     this.getChapters();
     this.getTranslations();
-    this.getAudio();
   },
   computed: {
     ...mapGetters(["isAuthenticated"]),

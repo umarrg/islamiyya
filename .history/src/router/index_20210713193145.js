@@ -35,17 +35,6 @@ const routes = [
   },
 
   {
-    path: "/quran/:id",
-    name: "Quran",
-    component: () => import("../components/quranView.vue"),
-    meta: {
-      showHeader: true,
-      showAppbar: false,
-    },
-  },
-
-
-  {
     path: "/hadith",
     name: "Hadith",
     component: () => import("../views/Hadith.vue"),
@@ -59,7 +48,7 @@ const routes = [
     component: () => import("../views/Login.vue"),
     meta: {
       showHeader: false,
-      showAppbar: false,
+      showAppbar: true,
     },
   },
   {

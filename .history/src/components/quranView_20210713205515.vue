@@ -155,7 +155,6 @@ export default {
     file: "",
     show: true,
     currentTafsir: null,
-    currentAudio: null,
     type: 2,
     loading: true,
     error: false,
@@ -234,8 +233,7 @@ export default {
           .catch((e) => {
             console.log(e);
           })
-          .finally(() => (this.audio = false), 
-            (this.currentAudio = key));
+          .finally(() => (this.audio = false));
     },
   },
 
