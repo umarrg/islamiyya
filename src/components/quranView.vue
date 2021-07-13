@@ -43,7 +43,7 @@
                 </span>
               </div>
               <div v-for="(trans, index) in hausaTran" :key="index">
-                <span v-show="!show"> {{ trans.text }}</span>
+                <span v-show="!show && currentTafsir == item.verse_key"> {{ trans.text }}</span>
               </div>
               <div class="mt-5">
                 <v-divider></v-divider>
@@ -76,6 +76,7 @@ export default {
     surahs: {},
     number: "",
     show: true,
+    currentTafsir: null,
     type:2,
     loading: true,
     error: false,
@@ -126,7 +127,7 @@ export default {
           console.log(res.data);
         })
         .catch((e) => console.log(e))
-        .finally(() => ((this.loading = false), (this.show = false)));
+        .finally(() => ((this.loading = false), (this.show = false), (this.currentTafsir = key)));
     },
   },
 
