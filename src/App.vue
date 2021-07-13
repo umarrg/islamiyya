@@ -10,7 +10,7 @@
 
 <script>
 import Appbar from '../src/components/appbar.vue'
-import navbar from '../src/components/Navbar'
+import navbar from '../src/components/navbar'
 export default {
   name: 'App',
 
