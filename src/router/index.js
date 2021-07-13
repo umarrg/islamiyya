@@ -71,7 +71,7 @@ const routes = [
   {
     path: "/signUp",
     name: "Sign up",
-    component: () => import("../views/signUp.vue"),
+    component: () => import("../views/SignUp.vue"),
     meta: {
       showHeader: false,
       showAppbar: true,
