@@ -66,7 +66,7 @@
 <script>
 export default {
   data: () => ({
-    drawer: true,
+    drawer: false,
     links: [
       { icon: "mdi-view-dashboard", text: "Dashboard", route: "/" },
       { icon: "mdi-heart", text: "Map", route: "/about" },
