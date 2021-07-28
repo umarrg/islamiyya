@@ -55,7 +55,7 @@
       <template v-slot:append>
         <div class="pa-2">
           <v-btn block icon color="#ef6c00" @click="logout()">
-           <v-icon color="">mdi-logout</v-icon>
+           <v-icon color="">mdi-lo</v-icon>
           
           </v-btn>
         </div>
