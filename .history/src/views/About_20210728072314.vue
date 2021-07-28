@@ -9,7 +9,7 @@
               <v-list-item>
                 <v-list-item-avatar>
                   <v-avatar color="primary">
-                    <span class="white--text">{{ item.verse_key }}</span>
+                    <span class="">{{ item.verse_key }}</span>
                   </v-avatar>
                 </v-list-item-avatar>
                 <v-list-item-action>

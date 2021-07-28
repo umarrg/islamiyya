@@ -129,7 +129,7 @@
                     v-show="!audio && currentAudio == item.verse_key"
                     flat
                     :file="file"
-                
+                    auto
                     color="primary"
                     downloadable
                   ></vuetify-audio>
@@ -235,7 +235,8 @@ export default {
           .catch((e) => {
             console.log(e);
           })
-          .finally(() => (this.audio = false), (this.currentAudio = key));
+          .finally(() => (this.audio = false), 
+            (this.currentAudio = key));
     },
   },
 

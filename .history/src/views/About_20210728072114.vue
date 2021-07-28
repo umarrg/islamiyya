@@ -9,7 +9,7 @@
               <v-list-item>
                 <v-list-item-avatar>
                   <v-avatar color="primary">
-                    <span class="white--text">{{ item.verse_key }}</span>
+                    <span>{{ item.verse_key }}</span>
                   </v-avatar>
                 </v-list-item-avatar>
                 <v-list-item-action>
@@ -36,9 +36,7 @@ export default {
       this.$store.dispatch("fetchLikes");
     },
   },
-  created() {
-    this.getLikes();
-  },
+
   computed: {
     ...mapGetters(["currentUser", "isAuthenticated"]),
 

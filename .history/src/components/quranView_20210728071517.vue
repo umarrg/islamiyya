@@ -129,7 +129,7 @@
                     v-show="!audio && currentAudio == item.verse_key"
                     flat
                     :file="file"
-                
+                    autoPlay
                     color="primary"
                     downloadable
                   ></vuetify-audio>

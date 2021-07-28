@@ -16,7 +16,7 @@ const routes = [
   },
   {
     path: "/likes",
-    name: "Likes",
+    name: "About",
     component: () => import("../views/About.vue"),
     meta: {
       showHeader: true,

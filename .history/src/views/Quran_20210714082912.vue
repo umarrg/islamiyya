@@ -85,7 +85,7 @@
             </v-card>
           </v-card>
         </v-col>
-        <v-col cols="12">
+       <v-col cols="12">
           <v-card v-for="item in users" :key="item.verse_key">
             <p>{{ item.text }}</p>
           </v-card>
@@ -118,8 +118,9 @@ export default {
         .finally(() => (this.loading = false));
     },
   },
-  watch: {
+   watch: {
     search() {
+     
       console.log(this.search);
       this.isLoading = true;
       axios
