@@ -66,18 +66,18 @@
                     <v-btn
                       outlined
                       color="primary"
-                      class="px-10 mx-2"
+                      class="px-7 mx-2"
                       @click="fcSignin()"
                     >
                       <v-icon> mdi-facebook</v-icon>
                     </v-btn>
-                    <v-btn outlined color="primary" class="px-10 mx-2">
+                    <v-btn outlined color="primary" class="px-7 mx-2">
                       <v-icon> mdi-twitter</v-icon>
                     </v-btn>
                     <v-btn
                       outlined
                       color="primary"
-                      class="px-10 mx-2"
+                      class="px-7 mx-2"
                       @click="googleSignin()"
                     >
                       <v-icon> mdi-google</v-icon>

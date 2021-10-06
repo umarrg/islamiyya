@@ -70,7 +70,7 @@
                     <v-btn
                       outlined
                       color="primary"
-                      class="px-10 mx-2"
+                      class="px-7 mx-2"
                       v-for="item in icon"
                       :key="item"
                     >
