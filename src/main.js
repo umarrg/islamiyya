@@ -7,6 +7,7 @@ import axios from 'axios'
 import VueAxios from 'vue-axios'
 import VueClipboard from 'vue-clipboard2'
 import shareIt from 'vue-share-it';
+import './registerServiceWorker'
 
 
 
