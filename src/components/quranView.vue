@@ -23,7 +23,7 @@
               </div>
               <v-spacer></v-spacer>
               <div class="text-right">
-                <span class="text-h5 "> {{ item.text_imlaei }} </span>
+                <span class="text-h5"> {{ item.text_imlaei }} </span>
               </div>
             </v-row>
             <v-row>
@@ -129,7 +129,6 @@
                     v-show="!audio && currentAudio == item.verse_key"
                     flat
                     :file="file"
-                
                     color="primary"
                     downloadable
                   ></vuetify-audio>
@@ -215,10 +214,10 @@ export default {
           )
         );
     },
-    onCopy: function(e) {
+    onCopy: function (e) {
       alert("Copied to clipboard: " + e.text);
     },
-    onError: function(e) {
+    onError: function (e) {
       alert("Failed to copy the text to the clipboard");
       console.log(e);
     },
