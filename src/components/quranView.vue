@@ -23,7 +23,7 @@
               </div>
               <v-spacer></v-spacer>
               <div class="text-right">
-                <span class="text-h5"> {{ item.text_imlaei }} </span>
+                <span class="text-h6"> {{ item.text_imlaei }} </span>
               </div>
             </v-row>
             <v-row>
